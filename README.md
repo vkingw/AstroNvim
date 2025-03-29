@@ -1,24 +1,6 @@
-<div align="center" id="madewithlua">
-  <img
-    src="https://astronvim.com/logo/astronvim.svg"
-    width="110"
-    ,
-    height="100"
-  />
-</div>
-<h1 align="center">AstroNvim</h1>
+# AstroNvim Template
 
-<h4 align="center">
-  <a href="https://docs.astronvim.com/#-installation">Install</a>
-  ·
-  <a href="https://docs.astronvim.com/#-configuration">Configure</a>
-  ·
-  <a href="https://github.com/AstroNvim/astrocommunity">Community Plugins</a>
-  ·
-  <a href="https://astronvim.com">Website</a>
-  ·
-  <a href="https://discord.astronvim.com">Discord</a>
-</h4>
+**NOTE:** This is for AstroNvim v5+
 
 <p align="center">
     <a href="https://github.com/AstroNvim/AstroNvim/pulse"><img src="https://img.shields.io/github/last-commit/AstroNvim/AstroNvim?style=for-the-badge&logo=github&color=7dc4e4&logoColor=D9E0EE&labelColor=302D41"></a>
@@ -76,10 +58,6 @@ AstroNvim is an aesthetically pleasing and feature-rich neovim config that is ex
 
 ## 🛠️ Installation
 
-AstroNvim is provided as a plugin that can be installed with the [`lazy.nvim`](https://github.com/folke/lazy.nvim) plugin manager and then used to import all of the plugin configurations that AstroNvim provides. To quickly get started it is recommended to start with the official [AstroNvim Template](https://github.com/AstroNvim/template) which provides a great starting point for a new AstroNvim based configuration.
-
-### Linux/Mac OS (Unix)
-
 #### Make a backup of your current nvim and shared folder
 
 ```shell
@@ -89,108 +67,20 @@ mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
 ```
 
-#### Clone the template repository
+#### Create a new user repository from this template
 
-```shell
-git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
-rm -rf ~/.config/nvim/.git
-nvim
-```
+Press the "Use this template" button above to create a new repository to store your user configuration.
 
-### Windows (Powershell)
-
-#### Make a backup of your current nvim and nvim-data folder
-
-```pwsh
-Rename-Item -Path $env:LOCALAPPDATA\nvim -NewName $env:LOCALAPPDATA\nvim.bak
-Rename-Item -Path $env:LOCALAPPDATA\nvim-data -NewName $env:LOCALAPPDATA\nvim-data.bak
-```
+You can also just clone this repository directly if you do not want to track your user configuration in GitHub.
 
 #### Clone the repository
 
-```pwsh
-git clone --depth 1 https://github.com/AstroNvim/template $env:LOCALAPPDATA\nvim
-Remove-Item $env:LOCALAPPDATA\nvim\.git -Recurse -Force
+```shell
+git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
+```
+
+#### Start Neovim
+
+```shell
 nvim
 ```
-
-#### Minimal `~/.config/nvim/init.lua`
-
-Some user's might not want to use an entire template or do any customization. Here is a minimal `~/.config/nvim/init.lua` file that simply set's up a base AstroNvim installation:
-
-```lua
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-if not vim.uv.fs_stat(lazypath) then
-  -- stylua: ignore
-  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
-end
-vim.opt.rtp:prepend(lazypath)
-
-require("lazy").setup { "AstroNvim/AstroNvim", version = "^5", import = "astronvim.plugins" }
-```
-
-## 📦 Basic Setup
-
-#### Install LSP
-
-Enter `:LspInstall` followed by the name of the server you want to install<br>
-Example: `:LspInstall pyright`
-
-#### Install language parser
-
-Enter `:TSInstall` followed by the name of the language you want to install<br>
-Example: `:TSInstall python`
-
-#### Install Debugger
-
-Enter `:DapInstall` followed by the name of the debugger you want to install<br>
-Example: `:DapInstall python`
-
-#### Manage plugins
-
-Run `:Lazy check` to check for plugin updates
-
-Run `:Lazy update` to apply any pending plugin updates
-
-Run `:Lazy clean` to remove any disabled or unused plugins
-
-Run `:Lazy sync` to update and clean plugins
-
-#### Update AstroNvim Packages
-
-Run `:AstroUpdate` (`<leader>pa`) to update both Neovim plugins and Mason packages
-
-## 🗒️ Links
-
-- [AstroNvim Website](https://astronvim.com)
-- [AstroNvim Documentation](https://docs.astronvim.com)
-- [Setup](https://docs.astronvim.com/#-setup) is given for basic editor setup after installation
-- [Default Mappings](https://docs.astronvim.com/mappings) more about the default key bindings
-- [Customizing Plugins](https://docs.astronvim.com/configuration/customizing_plugins/) more about configuring and adding plugins
-
-### 📹 Videos
-
-There have been some great review videos released by members of the community! Here are a few:
-
-- [Neovim With AstroNvim | Your New Advanced Development Editor](https://www.youtube.com/watch?v=GEHPiZ10gOk) (Version: 3, Content By: [@Cretezy](https://github.com/Cretezy))
-- [Why I'm quitting VIM by Carlos Mafla](https://www.youtube.com/watch?v=71GDopdc9rw) (Version: 2, Content By: [@gigo6000](https://github.com/gigo6000))
-- [Astro Vim - All in one Nvim config!! by John McBride](https://www.youtube.com/watch?v=JQLZ7NJRTEo) (Version: 1, Content By: [@jpmcb](https://github.com/jpmcb))
-
-## 🚀 Contributing
-
-If you plan to contribute, please check the [contribution guidelines](https://github.com/AstroNvim/.github/blob/main/CONTRIBUTING.md) first.
-
-## ⭐ Credits
-
-Sincere appreciation to the following repositories, plugin authors and the entire neovim community out there that made the development of AstroNvim possible.
-
-- [Plugins](https://docs.astronvim.com/reference/default_plugins/)
-- [NvChad](https://github.com/NvChad/NvChad)
-- [LunarVim](https://github.com/LunarVim)
-- [CosmicVim](https://github.com/CosmicNvim/CosmicNvim)
-
-<div align="center" id="madewithlua">
-
-[![Lua](https://img.shields.io/badge/Made%20with%20Lua-blue.svg?style=for-the-badge&logo=lua)](https://lua.org)
-
-</div>

@@ -6,14 +6,14 @@ return {
     opts = {
       -- add any opts here
       -- for example
-      provider = "openai",
-      openai = {
-        endpoint = "https://api.openai.com/v1",
-        model = "gpt-4.1-mini", -- your desired model (or use gpt-4o, etc.)
-        timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
-        temperature = 0,
-        max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-        --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
+      provider = "groq",
+      vendors = {
+        groq = {
+          __inherited_from = "openai",
+          api_key_name = "xai-QyX9glGBHi48fTaqnALMskO99DpSFZrQjQ1Y5UQLBxxKYuPh9KvFVVSCth8N1tWgTM5NVranosHWJAlI",
+          endpoint = "https://api.x.ai/v1/",
+          model = "grok-3-mini-latest",
+        },
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`

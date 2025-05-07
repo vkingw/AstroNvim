@@ -12,7 +12,7 @@ return {
           __inherited_from = "openai",
           api_key_name = "xai-QyX9glGBHi48fTaqnALMskO99DpSFZrQjQ1Y5UQLBxxKYuPh9KvFVVSCth8N1tWgTM5NVranosHWJAlI",
           endpoint = "https://api.x.ai/v1/",
-          model = "grok-3-mini-latest",
+          model = "grok-3-mini-fast-latest",
         },
       },
     },

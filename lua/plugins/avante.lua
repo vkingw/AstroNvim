@@ -6,13 +6,13 @@ return {
     opts = {
       -- add any opts here
       -- for example
-      provider = "grok",
+      provider = "groq",
       vendors = {
-        grok = {
+        groq = {
           __inherited_from = "openai",
-          api_key_name = "GROK_API_KEY",
-          endpoint = "https://api.x.ai/v1/",
-          model = "grok-3-mini-fast-latest",
+          api_key_name = "GROQ_API_KEY",
+          endpoint = "https://api.groq.com/openai/v1/",
+          model = "qwen-qwq-32b",
         },
       },
     },
